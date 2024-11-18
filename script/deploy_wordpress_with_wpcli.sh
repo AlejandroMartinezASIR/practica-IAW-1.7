@@ -45,3 +45,22 @@ wp config create \
   --dbhost=localhost \
   --path=/var/www/html \
   --allow-root
+
+wp core install \
+  --url=practica-wordpress.ddns.net \
+  --title="$WORDPRESS_TITLE" \
+  --admin_user=$WORDPRESS_USER \
+  --admin_password=$WORDPRESS_PASSWORD \
+  --admin_email=$WORDPRESS_EMAIL \
+  --path=/var/www/html \
+  --allow-root  
+
+
+wp option update whl_page "$WORDPRESS_HIDE_LOGIN_URL" --path=$WORDPRESS_DIRECTORY --allow-root
+
+
+wp rewrite structure '/%postname%/' --path=$WORDPRESS_DIRECTORY --allow-root
+
+cp ../htaccess/.htaccess $WORDPRESS_DIRECTORY
+
+sudo chown -R www-data:www-data $WORDPRESS_DIRECTORY
