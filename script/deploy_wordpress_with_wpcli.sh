@@ -43,16 +43,16 @@ wp config create \
   --dbuser=$WORDPRESS_DB_USER \
   --dbpass=$WORDPRESS_DB_PASSWORD \
   --dbhost=localhost \
-  --path=/var/www/html \
+  --path=$WORDPRESS_DIRECTORY \
   --allow-root
 
 wp core install \
-  --url=practica-wordpress.ddns.net \
+  --url=$LE_DOMAIN \
   --title="$WORDPRESS_TITLE" \
   --admin_user=$WORDPRESS_USER \
   --admin_password=$WORDPRESS_PASSWORD \
   --admin_email=$WORDPRESS_EMAIL \
-  --path=/var/www/html \
+  --path=$WORDPRESS_DIRECTORY \
   --allow-root  
 
 
