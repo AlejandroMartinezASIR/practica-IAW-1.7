@@ -17,6 +17,26 @@ En esta práctica tendremos 4 directorios:
 
 ## scripts
 Aquí automatizaremos los procesos de instalación y configuración de **WordPress** y **WP**.
+## .env
+Variables
+   
+    LE_EMAIL=PRACTICA1.7@prueba.com
+    LE_DOMAIN=practica-wordpress.ddnsking.com
+    #variables wordpress
+    WORDPRESS_DB_NAME=wordpress
+    WORDPRESS_DB_USER=alex
+    WORDPRESS_DB_PASSWORD=1234
+    IP_CLIENTE_MYSQL=localhost
+    WORDPRESS_DB_HOST=localhost
+    ###PAGINA
+    WORDPRESS_DIRECTORY=/var/www/html
+    CERTIFICATE_DOMAIN=practica-wordpress.ddnsking.com
+    WORDPRESS_TITLE="Blog de IAW"
+    WORDPRESS_USER=admin
+    WORDPRESS_PASSWORD=admin
+    WORDPRESS_EMAIL=demo@demo.es
+    WORDPRESS_HIDE_LOGIN_URL="nadaimportante"
+    
 ### install_lamp.sh
 Muestra todos los comandos que se van ejecutando
 
