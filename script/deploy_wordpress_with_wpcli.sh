@@ -56,10 +56,20 @@ wp core install \
   --allow-root  
 
 
-wp option update whl_page "$WORDPRESS_HIDE_LOGIN_URL" --path=/var/www/html --allow-root
+# Instalamos y activamos el theme mindscape
+wp theme install mindscape --activate --path=$WORDPRESS_DIRECTORY --allow-root
 
+# Instalamos un plugin
+wp plugin install wps-hide-login --activate --path=$WORDPRESS_DIRECTORY --allow-root
+
+# Configuramos el plugin de url
+wp option update whl_page "$WORDPRESS_HIDE_LOGIN_URL" --path=$WORDPRESS_DIRECTORY --allow-root
+
+# Configuramos los enlaces permanentes
 wp rewrite structure '/%postname%/' --path=$WORDPRESS_DIRECTORY --allow-root
 
+#Copiamos el archivo .htaccess
 cp ../htaccess/.htaccess $WORDPRESS_DIRECTORY
 
-sudo chown -R www-data:www-data $WORDPRESS_DIRECTORY
+# Modificamos el propietario y el grupo del directorio /var/www/html
+chown -R www-data:www-data $WORDPRESS_DIRECTORY
