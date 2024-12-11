@@ -58,7 +58,6 @@ wp core install \
 
 wp option update whl_page "$WORDPRESS_HIDE_LOGIN_URL" --path=/var/www/html --allow-root
 
-
 wp rewrite structure '/%postname%/' --path=$WORDPRESS_DIRECTORY --allow-root
 
 cp ../htaccess/.htaccess $WORDPRESS_DIRECTORY
